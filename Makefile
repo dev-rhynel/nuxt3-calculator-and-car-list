@@ -9,8 +9,8 @@ start:
 test:
 	$(set) run test
 
-storybook:
-	$(set) run storybook
+preview:
+	$(set) run preview
 
 build:
 	$(set) run build
