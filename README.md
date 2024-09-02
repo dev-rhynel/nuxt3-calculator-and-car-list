@@ -1,4 +1,4 @@
-# Nuxt 3 Minimal Starter
+# Rhynel Technical Test in NUXT 3
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
@@ -33,8 +33,6 @@ make start
 ```
 
 ## Development Test
-
-Start the development server on `http://localhost:2000`:
 
 ```bash
 # npm
