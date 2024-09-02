@@ -32,6 +32,22 @@ pnpm run dev
 make start
 ```
 
+## Development Test
+
+Start the development server on `http://localhost:2000`:
+
+```bash
+# npm
+npm run test
+
+# pnpm
+pnpm run test
+
+#make 
+make test
+```
+
+
 ## Production
 
 Build the application for production:
