@@ -56,6 +56,9 @@ npm run build
 
 # pnpm
 pnpm run build
+
+#make 
+make build
 ```
 
 Locally preview production build:
@@ -66,6 +69,9 @@ npm run preview
 
 # pnpm
 pnpm run preview
+
+#make 
+make preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
