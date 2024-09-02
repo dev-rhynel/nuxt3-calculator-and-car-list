@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {useToast} from '@/components/ui/toast/use-toast'
+import {useToast} from './ui/toast/use-toast'
 
 const row1 = ref<string[]>(['cos', 'sin', 'tan'])
 const row2 = ref<(number | string)[]>([7, 8, 9, '0', 'x'])

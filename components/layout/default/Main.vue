@@ -10,7 +10,8 @@
 .default-main {
   @apply w-full pb-1;
   &__container {
-    @apply h-[86vh] p-4;
+    @apply p-4;
+    min-height: 86vh;
   }
 }
 </style>

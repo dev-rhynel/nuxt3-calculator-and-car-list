@@ -2,4 +2,31 @@ html,
 body {
   font-family: Poppins, sans-serif;
   @apply bg-background text-foreground;
+
+  &::-webkit-scrollbar {
+    width: 9px;
+    overflow: auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0px;
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: hsl(var(--muted));
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-clip: content-box;
+    background-color: hsl(var(--primary));
+    &:hover {
+      background-color: hsl(var(--primary));
+    }
+    &:active {
+      background-color: hsl(var(--primary));
+    }
+  }
 }
