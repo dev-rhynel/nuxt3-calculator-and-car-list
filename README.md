@@ -76,10 +76,10 @@ make preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
-## SCREENSHOT
-# Calculator
+# SCREENSHOTS
+## Calculator
 ![Screenshot from 2024-09-03 14-55-48](https://github.com/user-attachments/assets/9a33b2e0-56dd-4a20-a8b6-d2f39d9cdaff)
 
-# Car List
+## Car List
 ![Screenshot from 2024-09-03 14-56-19](https://github.com/user-attachments/assets/16eb34ea-ba61-40c3-87fb-98ffb9cf4766)
 
