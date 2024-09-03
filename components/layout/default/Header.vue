@@ -17,7 +17,7 @@ import Navigation from './Navigation.vue'
 
 <style lang="scss" scoped>
 .default-header {
-  @apply sticky top-0 z-40 m-auto h-[60px] w-full bg-primary flex items-center justify-between;
+  @apply fixed  z-40 m-auto h-[60px] w-full bg-primary flex items-center justify-between;
   &__container {
     @apply flex grid grid-cols-12 gap-4;
   }
