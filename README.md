@@ -1,4 +1,4 @@
-# Rhynel Technical Test in NUXT 3
+# Calculator and Car List
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
