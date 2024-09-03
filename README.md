@@ -81,5 +81,6 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 ![Screenshot from 2024-09-03 14-55-48](https://github.com/user-attachments/assets/9a33b2e0-56dd-4a20-a8b6-d2f39d9cdaff)
 
 ## Car List
+![Screenshot from 2024-09-03 15-08-09](https://github.com/user-attachments/assets/1f1fe930-6d07-4c52-b03e-26b5eafb3a5c)
 ![Screenshot from 2024-09-03 14-56-19](https://github.com/user-attachments/assets/16eb34ea-ba61-40c3-87fb-98ffb9cf4766)
 
