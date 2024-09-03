@@ -42,14 +42,14 @@ defineExpose({
           <ShadAspectRatio v-if="car.image" :ratio="16 / 9" class="w-full">
             <img :src="car.image" alt="Image" class="w-full" />
           </ShadAspectRatio>
-          <ShadDrawerDescription
-            >Mileage: {{ car.mileage }}
-            <ShadBadge
-              v-if="car.featured"
-              variant="secondary"
-              class="text-white bg-green-500 pr-3"
+
+          <ShadDrawerDescription>
+            <ShadBadge v-if="car.featured" class="text-white bg-green-500 pr-3"
               ><StarIcon class="size-3 mr-2" />Featured
             </ShadBadge>
+          </ShadDrawerDescription>
+          <ShadDrawerDescription
+            >Mileage: {{ car.mileage }}
           </ShadDrawerDescription>
         </div>
       </div>

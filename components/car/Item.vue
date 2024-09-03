@@ -50,10 +50,7 @@ watch(
         />
       </ShadAspectRatio>
       <div class="space-y-2 px-3 pb-4">
-        <ShadBadge
-          v-if="car.featured"
-          variant="secondary"
-          class="text-white bg-green-500 pr-3"
+        <ShadBadge v-if="car.featured" class="text-white bg-green-500 pr-3"
           ><StarIcon class="size-3 mr-2" />Featured
         </ShadBadge>
 
