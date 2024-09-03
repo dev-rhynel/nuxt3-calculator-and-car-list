@@ -20,7 +20,7 @@ defineExpose({
 <template>
   <ShadDrawer v-model:open="open">
     <ShadDrawerContent>
-      <div class="mx-auto w-[44vw] pb-12 mb-12">
+      <div class="mx-auto md:w-[44vw] w-[94vw] pb-12 mb-12">
         <ShadDrawerHeader>
           <div @click="openDrawer(false)" class="abasolute">
             <div class="flex float-end cursor-pointer">
