@@ -1,6 +1,6 @@
 import {describe, it, expect, beforeAll} from 'vitest'
 import {mount, VueWrapper} from '@vue/test-utils'
-import Navigation from '../../../../components/layout/default/Navigation.vue'
+import Navigation from '@/components/layout/default/Navigation.vue'
 import {ref} from 'vue'
 
 describe('Navigation', () => {

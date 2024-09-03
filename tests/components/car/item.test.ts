@@ -1,6 +1,6 @@
 import {describe, it, expect, beforeAll} from 'vitest'
 import {mount, VueWrapper} from '@vue/test-utils'
-import CarItem from '../../../components/car/Item.vue'
+import CarItem from '@/components/car/Item.vue'
 import {ref} from 'vue'
 
 describe('CarItem', () => {

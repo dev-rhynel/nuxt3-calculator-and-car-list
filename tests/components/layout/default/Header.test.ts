@@ -1,6 +1,6 @@
 import {describe, it, expect, beforeAll} from 'vitest'
 import {mount, VueWrapper} from '@vue/test-utils'
-import Header from '../../../../components/layout/default/Header.vue'
+import Header from '@/components/layout/default/Header.vue'
 import {ref} from 'vue'
 
 describe('Header', () => {

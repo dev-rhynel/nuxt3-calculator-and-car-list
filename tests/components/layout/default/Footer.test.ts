@@ -1,6 +1,6 @@
 import {describe, it, expect, beforeAll} from 'vitest'
 import {mount, VueWrapper} from '@vue/test-utils'
-import Footer from '../../../../components/layout/default/Footer.vue'
+import Footer from '@/components/layout/default/Footer.vue'
 
 describe('Footer', () => {
   let wrapper: VueWrapper

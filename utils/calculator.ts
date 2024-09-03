@@ -44,10 +44,6 @@ export default function calculator(): CalculatorType {
     const operator = expression.match(opReg)?.[0]
 
     if (!operand1 || !operator || !operand2) {
-      throw new Error(`${expression} is an invalid entries!`)
-    }
-
-    if (!operand1 || !operator || !operand2) {
       throw new Error(`Invalid expression: ${expression}`)
     }
 

@@ -1,6 +1,6 @@
 import {describe, it, expect, beforeAll} from 'vitest'
 import {mount, VueWrapper} from '@vue/test-utils'
-import Calculator from '../../components/Calculator.vue'
+import Calculator from '@/components/Calculator.vue'
 import {ref} from 'vue'
 
 describe('Calculator', () => {
