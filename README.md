@@ -78,7 +78,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 # Screenshots
 ## Calculator
-![Screenshot from 2024-09-03 15-14-01](https://github.com/user-attachments/assets/7b42d065-d072-4c8d-8335-d3bed0266a25)
+![Screenshot from 2024-09-03 15-14-44](https://github.com/user-attachments/assets/0cee16b2-c825-49f4-8626-1ab72ed4bfcf)
 
 
 ## Car List
