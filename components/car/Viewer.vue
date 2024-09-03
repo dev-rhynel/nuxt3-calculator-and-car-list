@@ -1,13 +1,6 @@
 <script setup lang="ts">
-import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle
-} from '@/components/ui/drawer'
+import {ref} from 'vue'
 import {XIcon} from 'lucide-vue-next'
-import {AspectRatio} from '@/components/ui/aspect-ratio'
 
 defineProps<{
   car: CarType
@@ -25,30 +18,34 @@ defineExpose({
 </script>
 
 <template>
-  <Drawer v-model:open="open">
-    <DrawerContent>
+  <ShadDrawer v-model:open="open">
+    <ShadDrawerContent>
       <div class="mx-auto w-[44vw] pb-12 mb-12">
-        <DrawerHeader>
+        <ShadDrawerHeader>
           <div @click="openDrawer(false)" class="abasolute">
             <div class="flex float-end cursor-pointer">
               <XIcon class="size-5" />
             </div>
           </div>
-          <DrawerTitle class="opacity-50 text-md"
-            >{{ car.make }} {{ car.model }}</DrawerTitle
+          <ShadDrawerTitle class="opacity-50 text-md"
+            >{{ car.make }} {{ car.model }}</ShadDrawerTitle
           >
-          <DrawerDescription class="font-bold text-3xl text-primary">{{
+          <ShadDrawerDescription class="font-bold text-3xl text-primary">{{
             car.price
-          }}</DrawerDescription>
-          <DrawerDescription>Year Model: {{ car.year }}</DrawerDescription>
-        </DrawerHeader>
+          }}</ShadDrawerDescription>
+          <ShadDrawerDescription
+            >Year Model: {{ car.year }}</ShadDrawerDescription
+          >
+        </ShadDrawerHeader>
         <div class="flex flex-col space-y-3 p-5 rounded-lg">
-          <AspectRatio v-if="car.image" :ratio="16 / 9" class="w-full">
+          <ShadAspectRatio v-if="car.image" :ratio="16 / 9" class="w-full">
             <img :src="car.image" alt="Image" class="w-full" />
-          </AspectRatio>
-          <DrawerDescription>Mileage: {{ car.mileage }}</DrawerDescription>
+          </ShadAspectRatio>
+          <ShadDrawerDescription
+            >Mileage: {{ car.mileage }}</ShadDrawerDescription
+          >
         </div>
       </div>
-    </DrawerContent>
-  </Drawer>
+    </ShadDrawerContent>
+  </ShadDrawer>
 </template>

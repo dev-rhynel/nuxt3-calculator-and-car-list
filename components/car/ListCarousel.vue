@@ -1,21 +1,6 @@
 <script setup lang="ts">
-import {AspectRatio} from '@/components/ui/aspect-ratio'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from '@/components/ui/carousel'
-import {Card, CardContent} from '@/components/ui/card'
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger
-} from '@/components/ui/hover-card'
-import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
 import {CalendarDays} from 'lucide-vue-next'
-import {Skeleton} from '@/components/ui/skeleton'
+import {ref} from 'vue'
 
 defineProps<{
   cars: CarType[]
@@ -23,9 +8,9 @@ defineProps<{
   title: string
 }>()
 
+const selectedCar = ref<CarType | null>(null)
 const carViewer = ref()
 
-const selectedCar = ref<CarType | null>(null)
 const viewCar = (car: CarType) => {
   selectedCar.value = car
   if (carViewer.value) carViewer.value.openDrawer(true)
@@ -33,51 +18,51 @@ const viewCar = (car: CarType) => {
 </script>
 
 <template>
-  <Carousel
+  <ShadCarousel
     class="relative w-full max-w-sm my-12"
     :opts="{
       align: 'start'
     }"
   >
     <h2 class="text-2xl font-bold mb-4">{{ title }}</h2>
-    <CarouselContent class="-ml-1">
-      <CarouselItem
+    <ShadCarouselContent class="-ml-1">
+      <ShadCarouselItem
         v-for="car in cars"
         :key="car.id"
         @click="viewCar(car)"
         class="mb-3 md:basis-1/2 lg:basis-1/3"
       >
         <div>
-          <HoverCard
-            ><HoverCardTrigger>
-              <Card
+          <ShadHoverCard
+            ><ShadHoverCardTrigger>
+              <ShadCard
                 @click="viewCar(car)"
                 class="hover:shadow-2xl cursor-pointer"
                 v-if="!isLoading"
               >
-                <CardContent
+                <ShadCardContent
                   class="flex aspect-square items-center justify-center p-0"
                 >
-                  <AspectRatio :ratio="16 / 9">
+                  <ShadAspectRatio :ratio="16 / 9">
                     <img :src="car.image" alt="Image" />
-                  </AspectRatio>
-                </CardContent>
-              </Card>
-              <Card v-else class="hover:shadow-2xl cursor-pointer">
-                <CardContent
+                  </ShadAspectRatio>
+                </ShadCardContent>
+              </ShadCard>
+              <ShadCard v-else class="hover:shadow-2xl cursor-pointer">
+                <ShadCardContent
                   class="flex aspect-square items-center justify-center p-0"
                 >
-                  <Skeleton class="h-[110px] w-[100%]" />
-                </CardContent>
-              </Card>
-            </HoverCardTrigger>
-            <HoverCardContent class="w-80">
+                  <ShadSkeleton class="h-[110px] w-[100%]" />
+                </ShadCardContent>
+              </ShadCard>
+            </ShadHoverCardTrigger>
+            <ShadHoverCardContent class="w-80">
               <div class="flex justify-between space-x-4">
                 <div class="flex justify-between space-x-4">
-                  <Avatar>
-                    <AvatarImage :src="car.image" alt="Car image" />
-                    <AvatarFallback>{{ car.make[0] }}</AvatarFallback>
-                  </Avatar>
+                  <ShadAvatar>
+                    <ShadAvatarImage :src="car.image" alt="Car image" />
+                    <ShadAvatarFallback>{{ car.make[0] }}</ShadAvatarFallback>
+                  </ShadAvatar>
                   <div class="space-y-1">
                     <h4 class="text-sm font-semibold">@{{ car.make }}</h4>
                     <p class="text-sm">{{ car.make }} {{ car.model }}</p>
@@ -90,14 +75,14 @@ const viewCar = (car: CarType) => {
                     </div>
                   </div>
                 </div>
-              </div></HoverCardContent
+              </div></ShadHoverCardContent
             >
-          </HoverCard>
+          </ShadHoverCard>
         </div>
-      </CarouselItem>
-    </CarouselContent>
-    <CarouselPrevious />
-    <CarouselNext />
-  </Carousel>
+      </ShadCarouselItem>
+    </ShadCarouselContent>
+    <ShadCarouselPrevious />
+    <ShadCarouselNext />
+  </ShadCarousel>
   <CarViewer v-if="selectedCar" ref="carViewer" :car="selectedCar" />
 </template>

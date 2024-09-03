@@ -6,15 +6,7 @@ export function makeServer({environment = 'development'} = {}) {
     environment,
 
     models: {
-      car: Model.extend({})
-    },
-
-    factories: {
-      car: Factory.extend({
-        name(i: number) {
-          return `car ${i}`
-        }
-      })
+      car: Model
     },
 
     seeds(server) {
@@ -25,7 +17,9 @@ export function makeServer({environment = 'development'} = {}) {
         year: 2024,
         mileage: 341,
         price: '$15,000',
-        image: '/cars/lambo-1.png'
+        image: '/cars/lambo-1.png',
+        featured: true,
+        type: 'supercar'
       } as any)
 
       server.create('car', {
@@ -35,7 +29,9 @@ export function makeServer({environment = 'development'} = {}) {
         year: 2024,
         mileage: 341,
         price: '$53,000',
-        image: '/cars/lambo-5.png'
+        image: '/cars/lambo-5.png',
+        featured: true,
+        type: 'supercar'
       } as any)
 
       server.create('car', {
@@ -45,7 +41,9 @@ export function makeServer({environment = 'development'} = {}) {
         year: 2024,
         mileage: 341,
         price: '$663,000',
-        image: '/cars/lambo-3.png'
+        image: '/cars/lambo-3.png',
+        featured: true,
+        type: 'supercar'
       } as any)
 
       server.create('car', {
@@ -55,7 +53,9 @@ export function makeServer({environment = 'development'} = {}) {
         year: 2024,
         mileage: 341,
         price: '$663,000',
-        image: '/cars/lambo-7.png'
+        image: '/cars/lambo-7.png',
+        featured: true,
+        type: 'supercar'
       } as any)
 
       server.create('car', {
@@ -65,7 +65,9 @@ export function makeServer({environment = 'development'} = {}) {
         year: 2024,
         mileage: 341,
         price: '$53,000',
-        image: '/cars/lambo-6.png'
+        image: '/cars/lambo-6.png',
+        featured: true,
+        type: 'supercar'
       } as any)
 
       server.create('car', {
@@ -75,7 +77,9 @@ export function makeServer({environment = 'development'} = {}) {
         year: 2019,
         mileage: 5446,
         price: '$53,000',
-        image: '/cars/lambo-4.png'
+        image: '/cars/lambo-4.png',
+        featured: true,
+        type: 'supercar'
       } as any)
 
       server.create('car', {
@@ -85,7 +89,8 @@ export function makeServer({environment = 'development'} = {}) {
         year: 2024,
         mileage: 40000,
         price: '$55,000',
-        image: '/cars/revuelto.jpg'
+        image: '/cars/revuelto.jpg',
+        type: 'supercar'
       } as any)
 
       server.create('car', {
@@ -95,7 +100,8 @@ export function makeServer({environment = 'development'} = {}) {
         year: 2023,
         mileage: 40000,
         price: '$44,000',
-        image: '/cars/aventador.jpg'
+        image: '/cars/aventador.jpg',
+        type: 'supercar'
       } as any)
 
       server.create('car', {
@@ -105,7 +111,9 @@ export function makeServer({environment = 'development'} = {}) {
         year: 2022,
         mileage: 20000,
         price: '$18,000',
-        image: '/cars/lambo-2.png'
+        image: '/cars/lambo-2.png',
+        featured: true,
+        type: 'supercar'
       } as any)
 
       server.create('car', {
@@ -115,16 +123,61 @@ export function makeServer({environment = 'development'} = {}) {
         year: 2019,
         mileage: 40000,
         price: '$43,000',
-        image: '/cars/gallardo.jpg'
+        image: '/cars/gallardo.jpg',
+        type: 'supercar'
+      } as any)
+
+      server.create('car', {
+        id: 11,
+        make: 'Nissan',
+        model: 'Navara Pro 4X',
+        year: 2023,
+        mileage: 3200,
+        price: '$23,000',
+        image: '/cars/navara.jpeg',
+        type: 'pickup'
+      } as any)
+
+      server.create('car', {
+        id: 12,
+        make: 'Toyota',
+        model: 'Land Cruiser',
+        year: 2023,
+        mileage: 4200,
+        price: '$63,000',
+        image: '/cars/lc.jpeg',
+        type: 'suv'
+      } as any)
+
+      server.create('car', {
+        id: 13,
+        make: 'Ford',
+        model: 'Ranger Raptor',
+        year: 2023,
+        mileage: 1200,
+        price: '$33,000',
+        image: '/cars/raptor.jpeg',
+        type: 'pickup'
       } as any)
     },
 
     routes() {
       this.namespace = 'api'
 
-      this.get('/cars', (schema: any) => schema.all('car'))
+      this.get('/cars/:filter', (schema, request) => {
+        const {filter} = request.params
+        if (!filter || filter === 'all') {
+          return schema.cars.all()
+        }
+        return schema.cars.where({type: filter})
+      })
+      this.get('/cars', (schema, request) => {
+        return schema.cars.all()
+      })
 
-      this.get('/cars/latest', (schema: any) => schema.all('car').slice(0, 5))
+      this.get('/cars/featured', (schema, request) => {
+        return schema.cars.where({featured: true})
+      })
     }
   })
 }

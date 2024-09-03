@@ -5,5 +5,10 @@ export default defineConfig({
   plugins: [vue()],
   test: {
     environment: 'happy-dom'
+  },
+  resolve: {
+    alias: {
+      '@': '/src' // alias for src directory
+    }
   }
 })

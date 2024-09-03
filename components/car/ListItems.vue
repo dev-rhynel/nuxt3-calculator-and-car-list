@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CarItem from './Item.vue'
+import {ref} from 'vue'
 
 defineProps<{
   cars: CarType[]

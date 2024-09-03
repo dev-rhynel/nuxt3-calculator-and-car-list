@@ -4,22 +4,22 @@ export const carStore = defineStore('car', {
   state: () => ({
     isLoading: false,
     cars: [] as CarType[],
-    latestCars: [] as CarType[]
+    featuredCars: [] as CarType[]
   }),
   getters: {},
   actions: {
-    async fetchCars() {
+    async fetchCars(filter: string = '') {
       try {
         this.isLoading = true
         const [responseA, responseB] = await Promise.all([
-          fetch('/api/cars'),
-          fetch('/api/cars/latest')
+          fetch(`/api/cars/${filter}`),
+          fetch('/api/cars/featured')
         ])
         const dataA = await responseA.json()
         this.cars = dataA.cars as CarType[]
 
         const dataB = await responseB.json()
-        this.latestCars = dataB.cars as CarType[]
+        this.featuredCars = dataB.cars as CarType[]
       } catch (error) {
         console.error('Error fetching cars:', error)
       } finally {

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import {AspectRatio} from '@/components/ui/aspect-ratio'
-import {Skeleton} from '@/components/ui/skeleton'
+import {watch} from 'vue'
 import {gsap} from 'gsap'
 
 const animateCarCards = () => {
@@ -42,13 +41,13 @@ watch(
 <template>
   <div class="cars-list__car-card">
     <div v-if="!isLoading" class="flex flex-col space-y-3">
-      <AspectRatio :ratio="16 / 9">
+      <ShadAspectRatio :ratio="16 / 9">
         <img
           :src="car.image"
           alt="Image"
           class="rounded-t-xl object-cover h-min-[260px] w-full"
         />
-      </AspectRatio>
+      </ShadAspectRatio>
       <div class="space-y-2 px-3 pb-4">
         <h2 class="text-2xl font-bold">{{ car.make }} {{ car.model }}</h2>
         <p class="text-sm">{{ car.year }} | {{ car.mileage }} miles</p>
@@ -56,11 +55,11 @@ watch(
       </div>
     </div>
     <div v-else class="flex flex-col space-y-3 pb-12 px-4">
-      <Skeleton class="h-[225px] w-[100%] rounded-xl mb-6 pt-4" />
+      <ShadSkeleton class="h-[225px] w-[100%] rounded-xl mb-6 pt-4" />
       <div class="space-y-2 pb-2">
-        <Skeleton class="h-6 w-[350px]" />
-        <Skeleton class="h-6 w-[200px]" />
-        <Skeleton class="h-6 w-[80px]" />
+        <ShadSkeleton class="h-6 w-[350px]" />
+        <ShadSkeleton class="h-6 w-[200px]" />
+        <ShadSkeleton class="h-6 w-[80px]" />
       </div>
     </div>
   </div>

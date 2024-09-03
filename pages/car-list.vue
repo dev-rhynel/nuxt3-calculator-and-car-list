@@ -19,21 +19,26 @@ useSeoMeta({
   ogType: 'website'
 })
 
-const {cars, isLoading, latestCars} = storeToRefs(carStore())
+const {cars, isLoading, featuredCars} = storeToRefs(carStore())
 const {fetchCars} = carStore()
 
 onBeforeMount(() => {
   fetchCars()
 })
+
+const filter = (value: string) => {
+  fetchCars(value)
+}
 </script>
 
 <template>
   <LayoutDefaultContent :navId="2">
+    <CarActions @update:modelValue="filter" />
     <CarListItems :cars="cars" :isLoading="isLoading" />
     <CarListCarousel
       :isLoading="isLoading"
-      title="Latest Models"
-      :cars="latestCars"
+      title="Featured Cars"
+      :cars="featuredCars"
     />
   </LayoutDefaultContent>
 </template>
