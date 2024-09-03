@@ -21,7 +21,7 @@ defineExpose({
   <ShadDrawer v-model:open="open">
     <ShadDrawerContent>
       <div class="mx-auto md:w-[44vw] w-[94vw] pb-12 mb-12">
-        <ShadDrawerHeader>
+        <ShadDrawerHeader v-if="car">
           <div @click="openDrawer(false)" class="abasolute">
             <div class="flex float-end cursor-pointer">
               <XIcon class="size-5" />
