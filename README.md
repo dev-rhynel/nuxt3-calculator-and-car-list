@@ -28,7 +28,7 @@ npm run dev
 # pnpm
 pnpm run dev
 
-#make 
+# make 
 make start
 ```
 
@@ -41,7 +41,7 @@ npm run test
 # pnpm
 pnpm run test
 
-#make 
+# make 
 make test
 ```
 
@@ -57,7 +57,7 @@ npm run build
 # pnpm
 pnpm run build
 
-#make 
+# make 
 make build
 ```
 
@@ -75,3 +75,11 @@ make preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## SCREENSHOT
+# Calculator
+![Screenshot from 2024-09-03 14-55-48](https://github.com/user-attachments/assets/9a33b2e0-56dd-4a20-a8b6-d2f39d9cdaff)
+
+# Car List
+![Screenshot from 2024-09-03 14-56-19](https://github.com/user-attachments/assets/16eb34ea-ba61-40c3-87fb-98ffb9cf4766)
+
