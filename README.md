@@ -44,6 +44,7 @@ pnpm run test
 # make 
 make test
 ```
+![Screenshot from 2024-09-04 00-14-04](https://github.com/user-attachments/assets/1c0274f8-fd03-470e-878d-0b3a251c1451)
 
 
 ## Production
