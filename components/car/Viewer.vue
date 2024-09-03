@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue'
-import {XIcon} from 'lucide-vue-next'
+import {XIcon, StarIcon} from 'lucide-vue-next'
 
 defineProps<{
   car: CarType
@@ -27,6 +27,7 @@ defineExpose({
               <XIcon class="size-5" />
             </div>
           </div>
+
           <ShadDrawerTitle class="opacity-50 text-md"
             >{{ car.make }} {{ car.model }}</ShadDrawerTitle
           >
@@ -42,8 +43,14 @@ defineExpose({
             <img :src="car.image" alt="Image" class="w-full" />
           </ShadAspectRatio>
           <ShadDrawerDescription
-            >Mileage: {{ car.mileage }}</ShadDrawerDescription
-          >
+            >Mileage: {{ car.mileage }}
+            <ShadBadge
+              v-if="car.featured"
+              variant="secondary"
+              class="text-white bg-green-500 pr-3"
+              ><StarIcon class="size-3 mr-2" />Featured
+            </ShadBadge>
+          </ShadDrawerDescription>
         </div>
       </div>
     </ShadDrawerContent>

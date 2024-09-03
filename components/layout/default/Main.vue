@@ -10,7 +10,7 @@
 .default-main {
   @apply w-full pb-1;
   &__container {
-    @apply p-4;
+    @apply pt-[80px];
     min-height: 86vh;
   }
 }

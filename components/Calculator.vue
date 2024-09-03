@@ -208,7 +208,7 @@ const resetDisplay = (isAllClear: boolean = false) => {
 
 <style lang="scss" scoped>
 .calculator {
-  @apply bg-slate-600 rounded-2xl shadow-2xl mt-6;
+  @apply bg-slate-600 rounded-2xl shadow-2xl pt-12 mt-12;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;

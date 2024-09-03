@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {StarIcon} from 'lucide-vue-next'
 import {watch} from 'vue'
 import {gsap} from 'gsap'
 
@@ -49,6 +50,13 @@ watch(
         />
       </ShadAspectRatio>
       <div class="space-y-2 px-3 pb-4">
+        <ShadBadge
+          v-if="car.featured"
+          variant="secondary"
+          class="text-white bg-green-500 pr-3"
+          ><StarIcon class="size-3 mr-2" />Featured
+        </ShadBadge>
+
         <h2 class="text-2xl font-bold">{{ car.make }} {{ car.model }}</h2>
         <p class="text-sm">{{ car.year }} | {{ car.mileage }} miles</p>
         <p class="text-lg font-bold">{{ car.price }}</p>
