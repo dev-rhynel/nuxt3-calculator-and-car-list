@@ -9,5 +9,6 @@ declare global {
     mileage: number
     price: string
     image: string
+    isFeatured: boolean
   }
 }
